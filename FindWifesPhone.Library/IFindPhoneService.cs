@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace FindWifesPhone.Library
 {
-    public class Class1
+    public interface IFindPhoneService
     {
+        Task<bool> FindPhone(string username, string password, string deviceName);
     }
 }
