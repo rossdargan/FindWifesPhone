@@ -79,7 +79,6 @@ namespace FindWifesPhone.Library
             loginRequest.password = password;
             loginRequest.extended_login = false;
 
-
             string loginPostData = JsonConvert.SerializeObject(loginRequest);
 
             var loginData = await _webClient.PostDataToWebsiteAsync(iCloudLoginUrl, loginPostData);

@@ -46,7 +46,6 @@
   <ItemGroup>
     <Compile Include="FindPhoneService.cs" />
     <Compile Include="IFindPhoneService.cs" />
-    <Compile Include="IWebsiteStage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebClientExtension.cs" />
   </ItemGroup>
