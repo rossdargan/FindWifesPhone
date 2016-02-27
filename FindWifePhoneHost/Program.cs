@@ -28,9 +28,9 @@ namespace FindWifePhoneHost
                 });
 
                 x.RunAsLocalSystem();
-                x.SetDescription("A microservice to provide PRTG with information from the various sensors in the sensors folder");
-                x.SetDisplayName("PRTG Sensor Host");
-                x.SetServiceName("SensorHost");
+                x.SetDescription("A microservice used to log in to apples iCloud and locate a device");
+                x.SetDisplayName("Find an iPhone");
+                x.SetServiceName("FindWifesPhone");
             });
         }
     }
