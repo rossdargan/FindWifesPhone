@@ -46,7 +46,7 @@ namespace FindWifesPhone.Library
 
             var jsonString = await _webClient.PostDataToWebsiteAsync(iCloudDeviceUrl + ICloudInitClientUrl + urlParams, "{" + clientContext + "}");
 
-            if (jsonString.StartsWith("{\"statusCode\":\"200\""))
+            if (jsonString.EndsWith("\"statusCode\":\"200\"}"))
             {
                 dynamic response = JObject.Parse(jsonString);
 
