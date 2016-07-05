@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+  findwifesphonednx.console:
+    image: username/findwifesphonednx.console:Debug
+    environment:
+      - REMOTE_DEBUGGING=${REMOTE_DEBUGGING}
+    volumes:
+      - .:/app

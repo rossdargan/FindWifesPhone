@@ -8,6 +8,6 @@ namespace FindWifesPhoneDNX.Library
 {
     public interface IFindPhoneService
     {
-        Task<bool> FindPhone(string username, string password, string deviceName);
+        Task<bool> FindPhone(string deviceName);
     }
 }

@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  findwifesphonednx.console:
+    image: username/findwifesphonednx.console
+    environment:
+      - BROKER=
+      - CLIENT_ID=
+      - APPLE_USERNAME=
+      - APPLE_PASSWORD=

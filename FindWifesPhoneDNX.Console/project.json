@@ -1,20 +1,28 @@
 {
   "version": "1.0.0-*",
   "buildOptions": {
-    "emitEntryPoint": true
+    "emitEntryPoint": true,
+    "debugType": "portable"
   },
-
-  "dependencies": {    
+  "dependencies": {
     "FindWifesPhoneDNX.Library": "1.0.0-*",
+    "M2MqttDotnetCore": "1.0.0",
     "Microsoft.NETCore.App": {
       "type": "platform",
       "version": "1.0.0"
     }
   },
-
   "frameworks": {
     "netcoreapp1.0": {
       "imports": "dnxcore50"
     }
+  },
+  "publishOptions": {
+    "include": [
+      "docker-compose.yml",
+      "docker-compose.debug.yml",
+      "Dockerfile.debug",
+      "Dockerfile"
+    ]
   }
 }

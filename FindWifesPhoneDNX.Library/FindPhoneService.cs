@@ -15,6 +15,11 @@ namespace FindWifesPhoneDNX.Library
     public class FindPhoneService : IFindPhoneService, IDisposable
     {
         private readonly string _clientId;
+
+        private readonly string username;
+
+        private readonly string password;
+
         private const string ClientBuildNumber = "15G78";
         private const string ICloudSetupUrl = "https://setup.icloud.com/setup/ws/1/login";
         private const string ICloudPlaySoundUrl = "/fmipservice/client/web/playSound";
@@ -24,15 +29,17 @@ namespace FindWifesPhoneDNX.Library
 
         private string _authCookie;
 
-        public FindPhoneService(string clientId)
+        public FindPhoneService(string clientId, string username, string password)
         {
             _clientId = clientId;
+            this.username = username;
+            this.password = password;
 
             _webClient = new HttpClient();               
             _webClient.DefaultRequestHeaders.Add("Origin", "https://www.icloud.com");            
         }
 
-        public async Task<bool> FindPhone(string username, string password, string deviceName)
+        public async Task<bool> FindPhone(string deviceName)
         {
             string urlParams = $"?clientBuildNumber={ClientBuildNumber}&clientId={_clientId}";
       
@@ -87,7 +94,7 @@ namespace FindWifesPhoneDNX.Library
 
             var loginData = await PostDataToWebsiteWithResponseAsync(_webClient, iCloudLoginUrl, loginPostData);
 
-            if (loginData.StatusCode != HttpStatusCode.Forbidden)
+            if (loginData.IsSuccessStatusCode)
             {
                 _authCookie = loginData.Headers.FirstOrDefault(p => p.Key == "Set-Cookie").Value.First();
             }
